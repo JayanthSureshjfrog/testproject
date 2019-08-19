@@ -248,7 +248,7 @@
 
 	</dependencies>
 	<scm>
-		<developerConnection>scm:git:https://git.zd.datev.de/ano/ano-2.0/ano-core.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/JayanthSureshjfrog/testproject.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 </project>
