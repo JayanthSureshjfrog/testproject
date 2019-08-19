@@ -1,0 +1,141 @@
+Started by user ADMF RLAN
+Replayed #15
+ > /usr/bin/git rev-parse --is-inside-work-tree # timeout=10
+Setting origin to https://git.zd.datev.de/jenkins-tests/ano-core.git
+ > /usr/bin/git config remote.origin.url https://git.zd.datev.de/jenkins-tests/ano-core.git # timeout=10
+Fetching origin...
+Fetching upstream changes from origin
+ > /usr/bin/git --version # timeout=10
+ > /usr/bin/git config --get remote.origin.url # timeout=10
+using GIT_ASKPASS to set credentials tg02546@git.zd.datev.de (API-Token)
+ > /usr/bin/git fetch --tags --progress origin +refs/heads/*:refs/remotes/origin/*
+Seen branch in repository origin/develop
+Seen branch in repository origin/master
+Seen 2 remote branches
+Obtained Jenkinsfile from a553880c981106ecec512f8c2965ec3d45804c83
+Running in Durability level: MAX_SURVIVABILITY
+Loading library DATEV@master
+Attempting to resolve master from remote references...
+ > /usr/bin/git --version # timeout=10
+using GIT_ASKPASS to set credentials tg02546@git.zd.datev.de (API-Token)
+ > /usr/bin/git ls-remote https://git.zd.datev.de/jenkins/datev-pipeline-library.git # timeout=10
+Found match: refs/heads/master revision e1e80852cf8d14e4410e886279600f8cd73751e1
+using credential git.zd.datev.de
+ > /usr/bin/git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > /usr/bin/git config remote.origin.url https://git.zd.datev.de/jenkins/datev-pipeline-library.git # timeout=10
+Fetching upstream changes from https://git.zd.datev.de/jenkins/datev-pipeline-library.git
+ > /usr/bin/git --version # timeout=10
+using GIT_ASKPASS to set credentials tg02546@git.zd.datev.de (API-Token)
+ > /usr/bin/git fetch --tags --progress https://git.zd.datev.de/jenkins/datev-pipeline-library.git +refs/heads/*:refs/remotes/origin/* --depth=2
+Checking out Revision e1e80852cf8d14e4410e886279600f8cd73751e1 (master)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f e1e80852cf8d14e4410e886279600f8cd73751e1
+Commit message: "Merge branch 'dev' into 'master'"
+[Pipeline] Start of Pipeline
+[Pipeline] properties
+[Pipeline] stage
+[Pipeline] { (Linux)
+[Pipeline] node
+Running on vxdejenkinsbp05-buildo3 in /data/jenkins/buildo3/workspace/e_jenkins-tests_ano-core_develop
+[Pipeline] {
+[Pipeline] checkout
+using credential git.zd.datev.de
+Fetching changes from the remote Git repository
+Checking out Revision a553880c981106ecec512f8c2965ec3d45804c83 (develop)
+Enabling Git LFS pull
+Commit message: "Update Jenkinsfile"
+ > /usr/bin/git rev-parse --is-inside-work-tree # timeout=10
+ > /usr/bin/git config remote.origin.url https://git.zd.datev.de/jenkins-tests/ano-core.git # timeout=10
+Fetching upstream changes from https://git.zd.datev.de/jenkins-tests/ano-core.git
+ > /usr/bin/git --version # timeout=10
+using GIT_ASKPASS to set credentials tg02546@git.zd.datev.de (API-Token)
+ > /usr/bin/git fetch --no-tags --progress https://git.zd.datev.de/jenkins-tests/ano-core.git +refs/heads/*:refs/remotes/origin/* --depth=2
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f a553880c981106ecec512f8c2965ec3d45804c83
+ > /usr/bin/git branch -a -v --no-abbrev # timeout=10
+ > /usr/bin/git branch -D develop # timeout=10
+ > /usr/bin/git checkout -b develop a553880c981106ecec512f8c2965ec3d45804c83
+ > /usr/bin/git config --get remote.origin.url # timeout=10
+using GIT_ASKPASS to set credentials tg02546@git.zd.datev.de (API-Token)
+ > /usr/bin/git lfs pull origin
+ > /usr/bin/git rev-list --no-walk a553880c981106ecec512f8c2965ec3d45804c83 # timeout=10
+[Pipeline] getArtifactoryServer
+[Pipeline] newMavenBuild
+[Pipeline] sh
++ whoami
+[Pipeline] newBuildInfo
+[Pipeline] artifactoryMavenBuild
+expected to call org.jfrog.hudson.pipeline.common.types.packageManagerBuilds.MavenBuild.run but wound up catching artifactoryMavenBuild; see: https://jenkins.io/redirect/pipeline-cps-method-mismatches/
+Jenkins Artifactory Plugin version: 3.3.2
+Artifactory integration is enabled
+[e_jenkins-tests_ano-core_develop] $ java -classpath /data/jenkins/jenkins/tools/maven/apache-maven-3.6.1/boot/* -Dmaven.home=/data/jenkins/jenkins/tools/maven/apache-maven-3.6.1 -Dmaven.conf=/data/jenkins/jenkins/tools/maven/apache-maven-3.6.1/conf -DbuildInfoConfig.propertiesFile=/data/jenkins/buildo3/workspace/e_jenkins-tests_ano-core_develop@tmp/artifactory/buildInfo6832545018596203206.properties -DbuildInfoConfig.artifactoryResolutionEnabled=true -Dm3plugin.lib=/data/jenkins/buildo3/workspace/e_jenkins-tests_ano-core_develop@tmp/artifactory/cache/artifactory-plugin/3.3.2 -Dclassworlds.conf=/data/jenkins/buildo3/workspace/e_jenkins-tests_ano-core_develop@tmp/artifactory/classworlds1012388895988084797conf -Dmaven.multiModuleProjectDirectory=/data/jenkins/buildo3/workspace/e_jenkins-tests_ano-core_develop -Dmaven.test.failure.ignore -Dmaven.repo.local=/data/jenkins/buildo3/m2repos/maven-central-mirror org.codehaus.plexus.classworlds.launcher.Launcher -f pom.xml -B clean install
+Picked up JAVA_TOOL_OPTIONS: -Dcom.ibm.jsse2.overrideDefaultTLS=true -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2 -XX:-HeapDumpOnOutOfMemoryError -Djavax.net.ssl.trustStore=/data/jenkins/jenkins/tools/java-keystores/cacerts -Djavax.net.ssl.trustStorePassword=changeit
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - Scanning for projects...
+[main] INFO org.jfrog.build.extractor.maven.BuildInfoRecorder - Initializing Artifactory Build-Info Recording
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - ---------------< datev.test.assembly-plugin:jfrog-issue >---------------
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - Building JFrog Issue 1.0.0-SNAPSHOT
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --------------------------------[ jar ]---------------------------------
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-clean-plugin:3.1.0:clean (default-clean) @ jfrog-issue ---
+[main] INFO org.apache.maven.plugins.clean.CleanMojo - Deleting /data/jenkins.bk.datev.de/buildo3/workspace/e_jenkins-tests_ano-core_develop/target
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-resources-plugin:3.1.0:resources (default-resources) @ jfrog-issue ---
+[main] WARNING org.apache.maven.plugins.resources.ResourcesMojo - File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[main] WARNING org.apache.maven.plugins.resources.ResourcesMojo - Please take a look into the FAQ: https://maven.apache.org/general.html#encoding-warning
+[main] WARNING org.apache.maven.shared.filtering.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[main] INFO org.apache.maven.shared.filtering.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /data/jenkins.bk.datev.de/buildo3/workspace/e_jenkins-tests_ano-core_develop/src/main/resources
+[main] INFO org.apache.maven.shared.filtering.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /data/jenkins.bk.datev.de/buildo3/workspace/e_jenkins-tests_ano-core_develop/src/main/resources
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-compiler-plugin:3.8.0:compile (default-compile) @ jfrog-issue ---
+[main] INFO org.apache.maven.plugin.compiler.CompilerMojo - No sources to compile
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ jfrog-issue ---
+[main] WARNING org.apache.maven.shared.filtering.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[main] INFO org.apache.maven.shared.filtering.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /data/jenkins.bk.datev.de/buildo3/workspace/e_jenkins-tests_ano-core_develop/src/test/resources
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ jfrog-issue ---
+[main] INFO org.apache.maven.plugin.compiler.TestCompilerMojo - No sources to compile
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-surefire-plugin:2.22.1:test (default-test) @ jfrog-issue ---
+[main] INFO org.apache.maven.plugin.surefire.SurefirePlugin - No tests to run.
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-jar-plugin:3.1.1:jar (default-jar) @ jfrog-issue ---
+[main] WARNING org.apache.maven.plugins.jar.JarMojo - JAR will be empty - no content was marked for inclusion!
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /data/jenkins.bk.datev.de/buildo3/workspace/e_jenkins-tests_ano-core_develop/target/jfrog-issue-1.0.0-SNAPSHOT.jar
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-assembly-plugin:3.1.1:single (z) @ jfrog-issue ---
+[main] INFO org.apache.maven.plugins.assembly.io.DefaultAssemblyReader - Reading assembly descriptor: src/assembly/uerzipackage.xml
+[main] WARNING org.jfrog.build.extractor.maven.ArtifactoryProjectBuilder - Failed to build parent project for com.fasterxml.jackson:jackson-parent:pom:2.9.1.2
+[main] WARNING org.jfrog.build.extractor.maven.ArtifactoryProjectBuilder - Failed to build parent project for com.fasterxml.jackson:jackson-bom:pom:2.9.9
+[main] WARNING org.jfrog.build.extractor.maven.ArtifactoryProjectBuilder - Failed to build parent project for com.fasterxml.jackson:jackson-base:pom:2.9.9
+[main] WARNING org.jfrog.build.extractor.maven.ArtifactoryProjectBuilder - Failed to build parent project for com.fasterxml.jackson.core:jackson-databind:bundle:2.9.9
+[main] WARNING org.jfrog.build.extractor.maven.ArtifactoryProjectBuilder - Failed to build parent project for com.fasterxml.jackson:jackson-parent:pom:2.9.0
+[main] WARNING org.jfrog.build.extractor.maven.ArtifactoryProjectBuilder - Failed to build parent project for com.fasterxml.jackson.core:jackson-annotations:bundle:2.9.0
+[main] WARNING org.jfrog.build.extractor.maven.ArtifactoryProjectBuilder - Failed to build parent project for com.fasterxml.jackson:jackson-parent:pom:2.9.1.2
+[main] WARNING org.jfrog.build.extractor.maven.ArtifactoryProjectBuilder - Failed to build parent project for com.fasterxml.jackson:jackson-bom:pom:2.9.9
+[main] WARNING org.jfrog.build.extractor.maven.ArtifactoryProjectBuilder - Failed to build parent project for com.fasterxml.jackson:jackson-base:pom:2.9.9
+[main] WARNING org.jfrog.build.extractor.maven.ArtifactoryProjectBuilder - Failed to build parent project for com.fasterxml.jackson.core:jackson-core:bundle:2.9.9
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /data/jenkins.bk.datev.de/buildo3/workspace/e_jenkins-tests_ano-core_develop/target/jfrog-issue-1.0.0-SNAPSHOT-z.jar
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - 
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - --- maven-install-plugin:2.5.2:install (default-install) @ jfrog-issue ---
+[main] INFO org.codehaus.plexus.PlexusContainer - Installing /data/jenkins.bk.datev.de/buildo3/workspace/e_jenkins-tests_ano-core_develop/target/jfrog-issue-1.0.0-SNAPSHOT.jar to /data/jenkins/buildo3/m2repos/maven-central-mirror/datev/test/assembly-plugin/jfrog-issue/1.0.0-SNAPSHOT/jfrog-issue-1.0.0-SNAPSHOT.jar
+[main] INFO org.codehaus.plexus.PlexusContainer - Installing /data/jenkins.bk.datev.de/buildo3/workspace/e_jenkins-tests_ano-core_develop/pom.xml to /data/jenkins/buildo3/m2repos/maven-central-mirror/datev/test/assembly-plugin/jfrog-issue/1.0.0-SNAPSHOT/jfrog-issue-1.0.0-SNAPSHOT.pom
+[main] INFO org.codehaus.plexus.PlexusContainer - Installing /data/jenkins.bk.datev.de/buildo3/workspace/e_jenkins-tests_ano-core_develop/target/jfrog-issue-1.0.0-SNAPSHOT-z.jar to /data/jenkins/buildo3/m2repos/maven-central-mirror/datev/test/assembly-plugin/jfrog-issue/1.0.0-SNAPSHOT/jfrog-issue-1.0.0-SNAPSHOT-z.jar
+[main] INFO org.jfrog.build.extractor.maven.BuildInfoClientBuilder - Deploying artifact: https://repo.bk.datev.de/artifactory/maven-datev-repo/datev/test/assembly-plugin/jfrog-issue/1.0.0-SNAPSHOT/jfrog-issue-1.0.0-SNAPSHOT.jar
+[main] INFO org.jfrog.build.extractor.maven.BuildInfoClientBuilder - Deploying artifact: https://repo.bk.datev.de/artifactory/maven-datev-repo/datev/test/assembly-plugin/jfrog-issue/1.0.0-SNAPSHOT/jfrog-issue-1.0.0-SNAPSHOT-z.jar
+[main] INFO org.jfrog.build.extractor.maven.BuildInfoClientBuilder - Deploying artifact: https://repo.bk.datev.de/artifactory/maven-datev-repo/datev/test/assembly-plugin/jfrog-issue/1.0.0-SNAPSHOT/jfrog-issue-1.0.0-SNAPSHOT.pom
+[main] INFO org.jfrog.build.extractor.maven.BuildDeploymentHelper - Artifactory Build Info Recorder: publish build info set to false, build info will not be published...
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - ------------------------------------------------------------------------
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - BUILD SUCCESS
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - ------------------------------------------------------------------------
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - Total time:  4.387 s
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - Finished at: 2019-08-19T08:05:20+02:00
+[main] INFO org.apache.maven.cli.event.ExecutionEventLogger - ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] End of Pipeline
+Finished: SUCCESS
